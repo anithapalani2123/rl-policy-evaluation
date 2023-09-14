@@ -131,8 +131,10 @@ print('Reaches goal {:.2f}%. Obtains an average undiscounted return of {:.4f}.'.
 
 ## Create your own policy
 pi_2 = lambda s: {
-    0:LEFT, 1:RIGHT, 2:RIGHT, 3:LEFT, 4:LEFT, 5:RIGHT, 6:LEFT
+    0:RIGHT, 1:LEFT, 2:LEFT, 3:RIGHT, 4:LEFT, 5:LEFT, 6:RIGHT
 }[s]
+
+
 print_policy(pi_2, P, action_symbols=('<', '>'), n_cols=7)
 ## Find the probability of success and the mean return of you your policy
 print('Reaches goal {:.2f}%. Obtains an average undiscounted return of {:.4f}.'.format(
@@ -140,7 +142,7 @@ print('Reaches goal {:.2f}%. Obtains an average undiscounted return of {:.4f}.'.
     mean_return(env, pi_2)))
 ## Compare your policy with the first policy
 
-### The implementation of first code has resulted in success rate of 3% while the second policy has resulted in improving the result of reaching the goal. The success rate for second policy is 39%.
+### The implementation of first code has resulted in success rate of 3% while the second policy has resulted in improving the result of reaching the goal. The success rate for second policy is 22%.
 
 ```
 ## Policy Evaluation:
@@ -184,23 +186,24 @@ else:
 
 ## OUTPUT:
 ### Policy 1:
-![image](https://github.com/Aashima02/rl-policy-evaluation/assets/93427086/8569d152-1cbc-42b2-af2c-1abe3dc34209)
-![image](https://github.com/Aashima02/rl-policy-evaluation/assets/93427086/c3227142-e859-433c-ae52-b0221f22b639)
-![image](https://github.com/Aashima02/rl-policy-evaluation/assets/93427086/3cb8176a-d6c7-42b3-a13b-8fa6eea829e5)
+![image](https://github.com/anithapalani2123/rl-policy-evaluation/assets/94184990/ae5490b2-8a25-4c02-a6f4-b02074c233ee)
+
+![image](https://github.com/anithapalani2123/rl-policy-evaluation/assets/94184990/2f030145-bdf1-46eb-99dd-848bac77b01f)
+![image](https://github.com/anithapalani2123/rl-policy-evaluation/assets/94184990/edfcb8cf-b327-4cbe-84aa-a225c0220974)
 
 
 
 ### Policy 2:
-![image](https://github.com/Aashima02/rl-policy-evaluation/assets/93427086/001480ea-e4fa-4437-b4a3-65c989218db2)
-![image](https://github.com/Aashima02/rl-policy-evaluation/assets/93427086/11260e8b-6e2a-4f0e-9c8f-5861b1603e5f)
-![image](https://github.com/Aashima02/rl-policy-evaluation/assets/93427086/52249b61-ccc8-4903-969b-67ac23fb5f36)
+![image](https://github.com/anithapalani2123/rl-policy-evaluation/assets/94184990/d4d3bda4-a3d2-4d13-acb5-7f457adae32a)
+![image](https://github.com/anithapalani2123/rl-policy-evaluation/assets/94184990/d230709e-75e9-4088-b65b-d21650da628d)
+![image](https://github.com/anithapalani2123/rl-policy-evaluation/assets/94184990/0779e56f-52a4-4f7a-a511-871a14bc3339)
+
 
 ### Comparison:
-![image](https://github.com/Aashima02/rl-policy-evaluation/assets/93427086/1ee6d217-5ada-4fc0-ae3d-e3701e13746a)
-
+![image](https://github.com/anithapalani2123/rl-policy-evaluation/assets/94184990/96de1e2b-8e8f-4357-967d-d8289795401a)
 
 ### Conclusion:
-![image](https://github.com/Aashima02/rl-policy-evaluation/assets/93427086/18f14f65-c243-4b57-b72d-4f077e0cbe96)
+![image](https://github.com/anithapalani2123/rl-policy-evaluation/assets/94184990/0bcbc6b4-9c0b-4734-ab98-f86ba2c28efc)
 
 
 ## RESULT:
