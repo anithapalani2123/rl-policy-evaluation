@@ -39,7 +39,7 @@ The agent receives a reward of +1 for reaching the goal state (G). The agent rec
 ![image](https://github.com/Aashima02/rl-policy-evaluation/assets/93427086/574fb688-7c9f-409f-b07f-e75441d8f4b3)
 
 ## Program:
-python
+```
 pip install git+https://github.com/mimoralea/gym-walk#egg=gym-walk
 
 import warnings ; warnings.filterwarnings('ignore')
@@ -51,9 +51,9 @@ warnings.filterwarnings('ignore', category=DeprecationWarning)
 np.set_printoptions(suppress=True)
 random.seed(123); np.random.seed(123)
 # Reference https://github.com/mimoralea/gym-walk
+```
 
-
-python
+```
 def print_policy(pi, P, action_symbols=('<', 'v', '>', '^'), n_cols=4, title='Policy:'):
     print(title)
     arrs = {k:v for k,v in enumerate(action_symbols)}
@@ -66,8 +66,8 @@ def print_policy(pi, P, action_symbols=('<', 'v', '>', '^'), n_cols=4, title='Po
             print(str(s).zfill(2), arrs[a].rjust(6), end=" ")
         if (s + 1) % n_cols == 0: print("|")
 
-
-python
+```
+```
 def print_state_value_function(V, P, n_cols=4, prec=3, title='State-value function:'):
     print(title)
     for s in range(len(P)):
@@ -79,8 +79,8 @@ def print_state_value_function(V, P, n_cols=4, prec=3, title='State-value functi
             print(str(s).zfill(2), '{}'.format(np.round(v, prec)).rjust(6), end=" ")
         if (s + 1) % n_cols == 0: print("|")
 
-
-python
+```
+```
 def probability_success(env, pi, goal_state, n_episodes=100, max_steps=200):
     random.seed(123); np.random.seed(123) ; env.seed(123)
     results = []
@@ -92,8 +92,8 @@ def probability_success(env, pi, goal_state, n_episodes=100, max_steps=200):
         results.append(state == goal_state)
     return np.sum(results)/len(results)
 
-
-python
+```
+```
 def mean_return(env, pi, n_episodes=100, max_steps=200):
     random.seed(123); np.random.seed(123) ; env.seed(123)
     results = []
@@ -105,9 +105,9 @@ def mean_return(env, pi, n_episodes=100, max_steps=200):
             results[-1] += reward
             steps += 1
     return np.mean(results)
-
+```
 ### Slippery Walk Five MDP:
-python
+```
 env = gym.make('SlipperyWalkFive-v0')
 P = env.env.P
 init_state = env.reset()
@@ -142,9 +142,9 @@ print('Reaches goal {:.2f}%. Obtains an average undiscounted return of {:.4f}.'.
 
 ### The implementation of first code has resulted in success rate of 3% while the second policy has resulted in improving the result of reaching the goal. The success rate for second policy is 39%.
 
-
+```
 ## Policy Evaluation:
-python
+```
 def policy_evaluation(pi, P, gamma=1.0, theta=1e-10):
     prev_V = np.zeros(len(P), dtype=np.float64)
     # Write your code here to evaluate the given policy
@@ -180,7 +180,7 @@ elif(np.sum(V2>=V1)==7):
   print("The second policy is the better policy")
 else:
   print("Both policies have their merits.")
-
+```
 
 ## OUTPUT:
 ### Policy 1:
